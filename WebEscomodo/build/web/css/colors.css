@@ -1,0 +1,47 @@
+.neutral_warm{
+	background-color: #FFEDBF;
+}
+
+.ultrasonic_motion{
+	background-color: #F7803C;
+}
+
+.underwater{
+	background-color:#F54828;
+}
+
+.sound_waves{
+	background-color:#2E0D23;
+}
+
+.falling_light{
+	background-color:#F8E4C1;
+}
+
+.neutral_warm-text{
+	color: #FFEDBF;
+}
+
+.ultrasonic_motion-text{
+	color: #F7803C;
+}
+
+.underwater-text{
+	color:#F54828;
+}
+
+.sound_waves-text{
+	color:#2E0D23;
+}
+
+.falling_light-text{
+	color:#F8E4C1;
+}
+
+.my_container{
+	width: 100%;
+	padding-top: 30px;
+	padding-right: 5%;
+	padding-left: 5%;
+	padding-bottom: 30px;
+}

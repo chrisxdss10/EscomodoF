@@ -1,0 +1,76 @@
+.my_Area{
+	resize: none;
+	outline: none;
+	height: 80px;
+	font-size: 16px;
+}
+
+.flow-text.one-line{
+	display: inline-block;
+	padding-right:15px; 
+	padding-left:15px;
+}
+
+.one-line{
+	display: inline-block;
+	padding-right:20px; 
+}
+
+.myOrange {
+  background-color: #2E0D23 !important;
+}
+
+@media only screen and (max-width: 600px){
+    .card-title{
+        font-size: 24px !important;
+    }
+}
+@media only screen and (max-width: 992px) and (min-width: 601px) {
+    .card-title{
+        font-size: 17px !important;
+    }
+}
+@media only screen and (min-width: 993px) {
+    .card-title{
+        font-size: 19px !important;
+    }
+}
+
+.ultrasonic_motion.btn-flat{
+    background-color: #F54828 !important;
+    color: white;
+}
+
+
+/* label color */
+   .input-field label {
+     color: #F54828;
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: #F54828 !important;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #F54828 !important;
+     box-shadow: 0 1px 0 0 #F54828 !important;
+   }
+
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid #F54828 !important;
+     box-shadow: 0 1px 0 0 #F54828 !important;
+   }
+  
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #F54828 !important;
+     box-shadow: 0 1px 0 0 #F54828 !important;
+   }
+
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #F54828 !important;
+   }
+   
+   #lugar{
+       display:none;
+   }

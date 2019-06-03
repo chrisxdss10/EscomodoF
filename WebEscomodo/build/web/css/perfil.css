@@ -1,0 +1,37 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 25/05/2019, 09:19:25 PM
+    Author     : Yax
+*/
+.rowMarginT {
+    margin-top: 80px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.letradeIMPAKTO{
+    font-size: 50px;
+}
+.noIMPAKTO{
+    font-size: 25px;
+}
+.carnito{
+    background-color: #F7803C !important;
+}
+.estrella{
+    background-color: #F54828 !important;
+}
+.rowMarginS {
+    margin-top: 40px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.fa-cookie {
+    color: #804000;
+}
+.fa-cookie-bite {
+    color: #ffa000;
+}

@@ -1,0 +1,98 @@
+.my_Area{
+	resize: none;
+	outline: none;
+	height: 80px;
+	font-size: 16px;
+}
+
+.flow-text.one-line{
+	display: inline-block;
+	padding-right:15px; 
+	padding-left:15px;
+}
+
+.one-line{
+	display: inline-block;
+	padding-right:20px; 
+}
+
+.my_container{
+	width: 100%;
+	padding-top: 30px;
+	padding-right: 5%;
+	padding-left: 5%;
+	padding-bottom: 30px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    img.circle.mini{
+		width: 40px;
+		height: 40px;
+	}
+	td{
+		 font-size: 12px;
+	}
+}
+@media only screen and (max-width: 992px) and (min-width: 601px) {
+    img.circle.mini{
+		width: 60px;
+		height: 60px;
+	}
+	td{
+		font-size: 14px;
+	}
+}
+@media only screen and (min-width: 993px) {
+    img.circle.mini{
+		width: 80px;
+		height: 80px;
+	}
+	td{
+		 font-size: 18px;
+	}
+}
+
+/* unvisited link */
+a:link {
+  color: #2E0D23;
+}
+
+/* visited link */
+a:visited {
+  color: #2E0D23;
+}
+
+/* mouse over link */
+a:hover {
+  color: #F7803C;
+}
+
+/* selected link */
+a:active {
+  color: #F7803C;
+}
+
+.btn-red{
+  background-color: #F54828 !important;
+}
+.jconfirm-type-orange{
+  border-top: solid 8px #F54828 !important;
+}
+
+@keyframes type-orange{
+  1%, 50%, 100%{
+    border-color: #F54828 !important;
+  }
+}
+
+.jconfirm .jconfirm-box.jconfirm-type-orange .jconfirm-title-c .jconfirm-icon-c{
+    color: #F54828 !important;
+}
+
+.ultrasonic_motion.btn-flat{
+    background-color: #F54828 !important;
+    color: white;
+}
+
+

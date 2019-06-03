@@ -1,0 +1,58 @@
+
+.page-footer{
+	background-color: #2E0D23;
+}
+
+.white-text{
+	color: #FFFFFF !important;
+}
+
+#logoFooter{
+	height: 70%;
+	width: 70%;
+	margin-bottom: 10px;
+}
+
+.logoDiv{
+	display: flex;
+	justify-content: center;
+}
+
+.contacts-small li i.fab{
+	font-size: 45px;
+	padding: 0px 25px;
+}
+
+
+@media only screen and (max-width: 1410px){
+	#logoFooter{
+		height: 80%;
+		width: 80%;
+	}
+}
+
+
+@media only screen and (max-width: 992px){
+	#logoFooter{
+		height: 50%;
+		width: 50%;
+	}
+
+	.footerRow{
+		text-align: center;
+	}
+}
+
+
+@media only screen and (max-width: 600px){
+	#logo{
+		height: 56px;
+		width: 132px;
+	}
+
+	#logoFooter{
+		height: 70%;
+		width: 70%;
+	}
+}
+

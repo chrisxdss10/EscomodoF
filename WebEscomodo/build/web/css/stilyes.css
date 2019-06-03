@@ -1,0 +1,20 @@
+body{
+	background-color: #F8E4C1;
+}
+
+.row{
+	margin-bottom: 0px !important;
+}
+
+nav{
+	background-color: #F54828 !important;
+}
+
+.titles{
+	color: #F8E4C1;
+}
+
+a.right{
+	height: 100% !important;
+	width: 30% !important;
+}

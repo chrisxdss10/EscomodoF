@@ -1,0 +1,203 @@
+.my_Area{
+	resize: none;
+	outline: none;
+	height: 80px;
+	font-size: 16px;
+}
+
+.my_container{
+	width: 100%;
+	padding-top: 30px;
+	padding-right: 5%;
+	padding-left: 5%;
+	padding-bottom: 30px;
+}
+
+.flow-text.one-line{
+	display: inline-block;
+	padding-right:15px; 
+	padding-left:15px;
+}
+
+.one-line{
+	display: inline-block;
+	padding-right:20px; 
+}
+
+
+@media only screen and (max-width: 600px) {
+    img.circle.mini{
+            width: 40px;
+            height: 40px;
+	}
+	td{
+            font-size: 12px;
+	}
+	tbody {
+            display:block;
+            height:100px;
+            overflow:auto;
+	}
+}
+@media only screen and (max-width: 992px) and (min-width: 601px) {
+    img.circle.mini{
+		width: 60px;
+		height: 60px;
+	}
+	td{
+		font-size: 14px;
+	}
+	tbody {
+            display:block;
+            height:200px;
+            overflow:auto;
+	}
+}
+@media only screen and (min-width: 993px) {
+    img.circle.mini{
+		width: 80px;
+		height: 80px;
+	}
+	td{
+		 font-size: 18px;
+	}
+	tbody {
+ 	    display:block;
+            height:250px;
+            overflow:auto;
+	}
+}
+
+thead, tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
+}
+thead {
+    width: calc( 100% - 1em )
+}
+table {
+    width:100%;
+}
+
+.btn-paypal{
+	margin-top: 5px;
+	height: 30px;
+	width: 200px;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	color: #FFFFFF;
+	background-color: transparent;
+	border-width: 0px;
+}
+.btn-paypal:hover {
+  background-color: transparent;
+}
+.btn-paypal:active{
+  background-color: transparent;
+}
+.btn-paypal:focus{
+  background-color: transparent;
+}
+
+.btn-pay{
+	margin-top: 7px;
+	font-size: 15px;
+	height: 40px;
+	width: 200px;
+	padding-top: 1%;
+	color: #FFFFFF;
+	background-color: #F54828;
+
+}
+
+.btn-pay:hover {
+  background-color: #F7803C;
+}
+.btn-pay:active{
+  background-color: #F7803C;
+}
+.btn-pay:focus{
+  background-color: #F7803C;
+}
+
+/* label color */
+.input-field label {
+    color: #9C9C9C;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+    color: #F54828 !important;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #F54828 !important;
+    box-shadow: 0 1px 0 0 #F7803C !important;
+}
+.input-field input[type=text].valid {
+    border-bottom: 1px solid #9C9C9C !important;
+    box-shadow: 0 1px 0 0 #FC9C9C !important;
+}
+.input-field input[type=text].invalid {
+    border-bottom: 1px solid #F54828 !important;
+    box-shadow: 0 1px 0 0 #F7803C !important;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+    color: #F54828 !important;
+}
+
+[type="radio"].with-gap:checked+span:after{
+	background-color: #F7803C !important;
+}
+
+[type="radio"].with-gap:checked+span:before,
+[type="radio"].with-gap:checked+span:after {
+	border: 2px solid #F7803C !important;
+}
+
+.sub{
+    font-size: 16px;
+}
+
+/* unvisited link */
+a:link {
+  color: #2E0D23;
+}
+
+/* visited link */
+a:visited {
+  color: #2E0D23;
+}
+
+/* mouse over link */
+a:hover {
+  color: #F7803C;
+}
+
+/* selected link */
+a:active {
+  color: #F7803C;
+}
+
+.btn-red{
+  background-color: #F54828 !important;
+}
+.jconfirm-type-orange{
+  border-top: solid 8px #F54828 !important;
+}
+
+@keyframes type-orange{
+  1%, 50%, 100%{
+    border-color: #F54828 !important;
+  }
+}
+
+.jconfirm .jconfirm-box.jconfirm-type-orange .jconfirm-title-c .jconfirm-icon-c{
+    color: #F54828 !important;
+}
+
+.ultrasonic_motion.btn-flat{
+    background-color: #F54828 !important;
+    color: white;
+}

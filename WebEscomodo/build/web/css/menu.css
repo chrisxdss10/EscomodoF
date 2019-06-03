@@ -1,0 +1,26 @@
+.btn-large
+{
+    color: #F8E4C1;
+    background-color: #F54828;
+    float: right;
+    height: 45px;
+    text-align: center; 
+}
+.btn-large:visited{
+  background-color: #FFEDBF;
+}
+.btn-large:hover {
+  background-color: #F7803C;
+}
+.btn-large:active{
+  background-color: #F7803C;
+}
+.btn-large:focus{
+  background-color: #F7803C;
+}
+
+.icon-inbutton
+{
+    margin-left: 10px;
+}
+
