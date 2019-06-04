@@ -46,6 +46,9 @@
         
 	<script type="text/javascript" src="libs/materialize/js/materialize.min.js"></script>
 	<script src="libs/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -56,6 +59,7 @@
         <script type="text/javascript" src="js/nvBar.js"></script>
 	<script type="text/javascript" src="js/foot.js"></script>
         <script type="text/javascript" src="js/pedidos.js"></script>
+        <script type="text/javascript" src="js/asignar.js"></script>
         
         <link rel="shortcut icon" type="image/x-icon" href="images/solo-logo-naranja.png" />
     </head>
@@ -199,7 +203,10 @@
                               <th class="col s10 m5 l5"><%=com%></th>
                               <th class="col s3 m2 l2">Hora: <%=hora%></th>
                               <th class="col s3 m2 l2"><span class="new badge carnito" data-badge-caption="productos"><%= totalP%></span></th>
-                              <th class="col s3 m2 l2"><span><button class="waves-effect waves-light btn-small amber"><i class="medium fas fa-utensils"></i>Terminar pedido</button></span></th>
+                              <th class="col s3 m2 l2"><span>
+                                      <button class="waves-effect waves-light btn-small amber term" data-cli="<%=cli%>" data-com="<%=com%>" data-fecha="<%=fecha%>"  data-tot="<%=tot%>" data-hora="<%=hora%>" data-lugar=" <%=lugar%>" data-iddd="<%=id%>">
+                                          <i class="medium fas fa-utensils"></i>Terminar pedido
+                                      </button></span></th>
                           </tr>
                         </thead>
                      </table>

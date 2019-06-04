@@ -179,14 +179,14 @@ delimiter ;
 
 drop procedure if exists actValoracion;
 delimiter **
-create procedure actValoracion(in mail nvarchar(40))
+create procedure actValoracion(in idR int)
 begin
 	declare val float(2,1);
-	set val= (select AVG(valrep) from aceptpedido, repartidor where idrepartidor = repartidor and valrep!=0 and email = mail);
-    if val>1 then
-		update repartidor set valoracion=val where email=mail;
+	set val= (select AVG(valrep) from aceptpedido where repartidor = idR and valrep!=0);
+    if val>=1 then
+		update repartidor set valoracion=val where idrepartidor=idR;
     else
-		update repartidor set valoracion=0 where email=mail;
+		update repartidor set valoracion=0 where idrepartidor=idR;
     end if;
 end; **
 delimiter ;
@@ -720,11 +720,12 @@ delimiter ;
 
 drop procedure if exists sp_califRepartidor;
 delimiter **
-create procedure sp_califRepartidor(in idp int, in mail varchar(40), in calif float(2,1))
+create procedure sp_califRepartidor(in idp int, in calif float(2,1))
 begin  
 	declare idR int;
+    declare mail varchar(40);
     
-	set idR = (select idrepartidor from repartidor where email = mail);
+	set idR = (select repartidor from aceptpedido where pedido = idp);
 	update aceptpedido set valrep = calif where pedido = idp and repartidor = idR;
 end **
 delimiter ;
@@ -766,4 +767,35 @@ begin
 				idestado=estado and cliente.idcliente=cliente and idplatillo=platillo and pedido.establecimiento= idest 
 					and idpedido= pedido and idrepartidor=repartidor and repartidor.email=mail and estado = 6;
 end; **
+delimiter ;
+
+drop procedure if exists sp_getRepbyIdP;
+delimiter **
+create procedure sp_getRepbyIdP(in idp int)
+begin  
+	declare rep int;
+    
+	set rep = (select repartidor from aceptpedido where pedido=idp);
+    select nombre, tel, foto from repartidor where idrepartidor = rep;
+end **
+delimiter ;
+
+drop procedure if exists udEstadoPed6;
+delimiter **
+create procedure udEstadoPed6(in idclien int, fech date,in hor time,
+in preciot float(5,2),  in lug nvarchar(60), in est int)
+begin
+	declare msj varchar(30);
+	if est = 7 then
+		update pedido set estado=7 where cliente= idclien and fecha=fech and 
+			hora=hor and preciotot=preciot and lugar=lug and estado=6;
+		set msj = "Entregado";
+	end if;
+    if est = 6 then
+		update pedido set estado=6 where cliente= idclien and fecha=fech and 
+			hora=hor and preciotot=preciot and lugar=lug and estado=5;
+		set msj = "Entrega en proceso";
+	end if;
+    select msj;
+end**
 delimiter ;

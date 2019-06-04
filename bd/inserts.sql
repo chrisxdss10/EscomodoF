@@ -125,11 +125,11 @@ insert into aceptpedido values(5, 4, 8, 0);
 insert into aceptpedido values(6, 5, 12, 5.0);
 insert into aceptpedido values(7, 5, 13, 4.5);
 
-call actValoracion("johnyPP@gmail.com"); 
-call actValoracion("luisSJ@hotmail.com"); 
-call actValoracion("naynay@gmail.com");
-call actValoracion("fermata@gmail.com");
-call actValoracion("y-chan@hotmail.com");
+call actValoracion(1); 
+call actValoracion(2); 
+call actValoracion(3);
+call actValoracion(4);
+call actValoracion(5);
 
 call verRepartidor("y-chan@hotmail.com");
 #Para usuario

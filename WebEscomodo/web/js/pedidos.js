@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 $(document).ready(function(){
     var val;
     $(document).on("click", ".cal", function(){
+        var idPed=$(this).attr("data-iddd");
             $.confirm({
                     title: '',
                     icon: 'fas fa-hotdog',
@@ -22,12 +23,13 @@ $(document).ready(function(){
                                 '<i id="cookie5" class="fa fa-5x fa-cookie cookie5"></i>'+
                             '</div><br><br>',
                     buttons: {
-                    Ok: function calificarPlatillo() {
+                    Ok: function calificarPlatillo(){
                     $.ajax({
                         type:"POST",
                         url: "calificarpedido.jsp",
-                        data: jQuery.param({ idP: document.getElementById("idPedi").value, cali: val}),
+                        data: jQuery.param({ idP: idPed , cali: val}),
                     success:function(){
+                        $('[data-iddd="'+idPed+'"]').hide();
                         $.alert({
                             title: "",
                             content: '<br><div class="row center-align"><span class="col s12 m12 l12 flow-text">Gracias, tu opinión es tomada en cuenta</span></div>',
@@ -57,6 +59,13 @@ $(document).ready(function(){
                 });
     });
     $(document).on("click", ".valR", function(){
+            var idPed=$(this).attr("data-idd");
+            var cli=$(this).attr("data-cli");
+            var com=$(this).attr("data-com");
+            var fecha=$(this).attr("data-fecha");
+            var hora=$(this).attr("data-hora");
+            var total=$(this).attr("data-tot");
+            var lugar=$(this).attr("data-lugar");
             $.confirm({
                     title: '',
                     icon: 'fas fa-hotdog',
@@ -73,8 +82,9 @@ $(document).ready(function(){
                     $.ajax({
                         type:"POST",
                         url: "calificarRep.jsp",
-                        data: jQuery.param({ idP: document.getElementById("idPedi").value, cali: val}),
+                        data: jQuery.param({idP: idPed, cali: val, clie: cli, come :com, fec: fecha, hor: hora, tot: total, lug:lugar}),
                     success:function(){
+                        $('[data-idd="'+idPed+'"]').hide();
                         $.alert({
                             title: "",
                             content: '<br><div class="row center-align"><span class="col s12 m12 l12 flow-text">Gracias, tu opinión es tomada en cuenta</span></div>',

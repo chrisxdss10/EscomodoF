@@ -145,6 +145,7 @@
                 <%
                 for(int n = 0; n< pedidos.size(); n++){
                    a = pedidos.get(n);
+                   int clin = a.getCliente();
                    int id = a.getIdPed();
                    String com = a.getComercio();
                    float tot = a.getTotal();
@@ -163,7 +164,13 @@
                      <table class="striped">
                         <thead>
                           <tr>
-                              <th class="col s2 m1 l1"><i class="fas fa-hamburger"></i></th>
+                              <th class="col s2 m1 l1">
+                                <%if(a.getCalificacion() == 0 && a.getEstado().equals("Entregado")){%>
+                                    <i class="fas fa-hamburger"></i>
+                                <%} else {%>  
+                                    <i class="fas fa-utensils"></i>
+                                <%}%>
+                              </th>
                               <th class="col s10 m5 l5"><%=com%></th>
                               <th class="col s3 m2 l2"><%=fecha%></th>
                               <th class="col s3 m2 l2"><%=hora%></th>
@@ -173,16 +180,35 @@
                      </table>
                   </div>
                   <div class="collapsible-body">
+                        <%if (a.getEstado().equals("Entrega en proceso")){
+                                   ldn.Repartidor rep = new ldn.Repartidor(id);
+                                   String rName= rep.getNombre();
+                                   String rNum = rep.getTel();
+                                   String rFoto = rep.getFoto();
+                        %>
+                        <table class="striped">
+                          <thead>
+                              <tr class="valign-wrapper">
+                                  <th class="col l2"><span><img src='images/default.png' class='circle responsive-img z-depth-3'/></span></th>
+                                  <th class="col l5"><span> Repartidor: <%=rName%></span></th>
+                                  <th class="col l5"><span><i class="fas fa-phone"></i> Contacto: <%=rNum%></span></th>
+                                  </tr>
+                          </thead>
+                      </table>
+                      <%}%>
                       <table class="striped">
                           <thead>
                               <tr>
-                                  <th><span><i class="fas fa-map-marker-alt"></i> Lugar de entrega: <%=lugar%></span></th>
+                                  <th><span data-lugar="<%=lugar%>"><i class="fas fa-map-marker-alt"></i> Lugar de entrega: <%=lugar%></span></th>
                                   <%if(!a.getEstado().equals("Entregado")){%>
                                   <th><span><i class="fas fa-dolly"></i>Estado: <%=a.getEstado()%></span></th>
                                   <%}
                                    if (a.getEstado().equals("Entrega en proceso")){
                                     %>
-                                  <th><span class="right-aligned"><a class="waves-effect waves-light btn-small pulse lime valR"><i class="medium fas fa-drumstick-bite"></i>Marcar como completado</a></span></th>
+                                  <th><span class="right-aligned">
+                                        <button class="waves-effect waves-light btn-small pulse lime valR" data-cli="<%=clin%>" data-com="<%=com%>" data-fecha="<%=fecha%>"  data-tot="<%=tot%>" data-hora="<%=hora%>" data-lugar="<%=lugar%>" data-idd="<%=id%>">
+                                            <i class="medium fas fa-drumstick-bite"></i>Marcar como completado
+                                        </button></span></th>
                                   <%}%>
                               </tr>
                           </thead>
@@ -202,13 +228,13 @@
                             a = pedidoG.get(k);
                          %>
                           <tr>
-                            <td><input id="idPedi" name="idPedi" type="text" class="validate" value="<%=a.getIdPed()%>" style="visibility:hidden; display: none"><%=a.getComida()%></td>
+                            <td><%=a.getComida()%></td>
                             <td><%=a.getPrecio()%></td>
                             <td><%=a.getCantidad()%></td>
                             <td><%=a.getTotal()%></td>
                             <%if(a.getCalificacion() == 0 && a.getEstado().equals("Entregado")){%>
                                 <td>
-                                    <span><button class="waves-effect waves-light btn-small pulse amber cal" id="cal"><i class="medium fas fa-cookie"></i>Puntúa</button></span>
+                                    <span><button class="waves-effect waves-light btn-small pulse amber cal" id="cal" data-iddd="<%=a.getIdPed()%>"><i class="medium fas fa-cookie"></i>Puntúa</button></span>
                                 </td>
                                 <%}%>
                          <%}%>

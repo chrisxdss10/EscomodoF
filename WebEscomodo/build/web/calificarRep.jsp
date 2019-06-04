@@ -12,7 +12,14 @@
 
 	int idPedido = Integer.parseInt(request.getParameter("idP"));
         float cali = Float.parseFloat(request.getParameter("cali"));
+        int clie = Integer.parseInt(request.getParameter("clie"));
+        String fec = request.getParameter("fec");
+        String hor = request.getParameter("hor");
+        float tot = Float.parseFloat(request.getParameter("tot"));
+        String lug = request.getParameter("lug");
         
         ped.calificar(idPedido,cali);
+        ped.actualizarR(idPedido);
+        ped.updatear(clie,fec,hor,tot,lug,7);
 %>
 

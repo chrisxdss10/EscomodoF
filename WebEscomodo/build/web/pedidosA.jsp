@@ -44,6 +44,7 @@
 	<script type="text/javascript" src="js/nvBar.js"></script>
 	<script type="text/javascript" src="js/foot.js"></script>
         <script type="text/javascript" src="js/pedidos.js"></script>
+        <script type="text/javascript" src="js/asignar.js"></script>
     </head>
     <body>
         <div>
@@ -135,7 +136,11 @@
                               <th class="col s10 m5 l5"><%=com%></th>
                               <th class="col s3 m2 l2">Hora: <%=hora%></th>
                               <th class="col s3 m2 l2"><span class="new badge carnito" data-badge-caption="productos"><%= totalP%></span></th>
-                              <th class="col s3 m2 l2"><span><button class="waves-effect waves-light btn-small amber"><i class="medium fas fa-utensils"></i>Tomar pedido</button></span></th>
+                              <th class="col s3 m2 l2"><span>
+                                      <button class="waves-effect waves-light btn-small amber tom" data-cli="<%=cli%>" data-com="<%=com%>" data-fecha="<%=fecha%>"  data-tot="<%=tot%>" data-hora="<%=hora%>" data-lugar=" <%=lugar%>" data-iddd="<%=id%>">
+                                          <i class="medium fas fa-utensils"></i>Tomar pedido
+                                      </button>
+                                </span></th>
                           </tr>
                         </thead>
                      </table>

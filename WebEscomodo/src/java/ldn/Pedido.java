@@ -458,5 +458,45 @@ public class Pedido {
         catch (Exception e){
             e.printStackTrace();
         }
+        
+    }
+    public void actualizarR(int idPedido){
+        BD.Datos base = new BD.Datos();
+        try{
+            base.conectar();
+        
+            base.consulta("call actValoracion('"+idPedido+"');");
+            
+            base.cierraConexion();
+            }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    public void updatear(int cli, String fec, String hor, float tot, String lug, int edo){
+        BD.Datos base = new BD.Datos();
+        try{
+            base.conectar();
+        
+            base.consulta("call udEstadoPed6('"+cli+"','"+fec+"','"+hor+"','"+tot+"','"+lug+"','"+edo+"');");
+            
+            base.cierraConexion();
+            }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    public void asignar(int idP, String mail){
+        BD.Datos base = new BD.Datos();
+        try{
+            base.conectar();
+        
+            base.consulta("call sp_asignarPedido('"+idP+"','"+mail+"');");
+            
+            base.cierraConexion();
+            }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
